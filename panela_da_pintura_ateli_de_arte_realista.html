@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panela da Pintura - Ateliê de Arte Realista | Tijuca, RJ</title>
+    <meta name="description" content="Ateliê de Arte Realista na Tijuca, Rio de Janeiro. Aulas de Desenho Realista (Grafite e Carvão) e Pintura a Óleo com o Professor Andrey. Ambiente acolhedor para iniciantes e avançados.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        art: {
+                            canvas: '#FDFBF7',
+                            paper: '#F7F3EB',
+                            card: '#FFFDF9',
+                            sienna: '#A0522D',
+                            terracotta: '#C86D51',
+                            amber: '#D97706',
+                            gold: '#B8860B',
+                            charcoal: '#1A1A18',
+                            graphite: '#2B2B28',
+                            warmgrey: '#6E6B65',
+                            border: '#E8E2D5',
+                            frame: '#3E2723'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif']
+                    },
+                    boxShadow: {
+                        'frame': '0 10px 30px -5px rgba(26, 26, 24, 0.08), 0 0 0 1px rgba(184, 134, 11, 0.15)',
+                        'frame-hover': '0 20px 40px -10px rgba(160, 82, 45, 0.15), 0 0 0 2px rgba(184, 134, 11, 0.4)',
+                        'gold-glow': '0 0 25px rgba(217, 119, 6, 0.25)'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Custom Art Frame & Fine UX Touches */
+        .art-border {
+            border: 1px solid rgba(184, 134, 11, 0.25);
+            position: relative;
+        }
+        .art-border::before {
+            content: '';
+            position: absolute;
+            inset: 3px;
+            border: 1px solid rgba(184, 134, 11, 0.15);
+            pointer-events: none;
+        }
+        .bg-canvas-texture {
+            background-color: #FDFBF7;
+            background-image: radial-gradient(#E8E2D5 0.75px, transparent 0.75px);
+            background-size: 16px 16px;
+        }
+        .glass-header {
+            background: rgba(253, 251, 247, 0.88);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        /* Hide Scrollbars in Horizontal Touch Sliders */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-art-canvas text-art-graphite font-sans antialiased selection:bg-art-terracotta selection:text-white">
+
+    <!-- Header / Navegação Fixa -->
+    <header class="fixed top-0 left-0 right-0 z-40 glass-header border-b border-art-border transition-all duration-300" id="mainHeader">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Logo -->
+            <a href="#inicio" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-full bg-art-sienna/10 border border-art-gold/40 flex items-center justify-center group-hover:scale-105 transition-transform">
+                    <i class="fa-solid font-serif text-art-sienna text-xl">🎨</i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-serif font-bold text-xl sm:text-2xl text-art-charcoal tracking-wide leading-tight group-hover:text-art-sienna transition-colors">Panela da Pintura</span>
+                    <span class="text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-art-gold">Ateliê de Arte Realista</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden lg:flex items-center space-x-8">
+                <a href="#inicio" class="nav-link text-sm font-medium text-art-graphite hover:text-art-sienna transition-colors">Início</a>
+                <a href="#atelie" class="nav-link text-sm font-medium text-art-graphite hover:text-art-sienna transition-colors">O Ateliê</a>
+                <a href="#cursos" class="nav-link text-sm font-medium text-art-graphite hover:text-art-sienna transition-colors">Cursos & Técnicas</a>
+                <a href="#diferenciais" class="nav-link text-sm font-medium text-art-graphite hover:text-art-sienna transition-colors">Por Que Nós</a>
+                <a href="#depoimentos" class="nav-link text-sm font-medium text-art-graphite hover:text-art-sienna transition-colors">Depoimentos</a>
+                <a href="#localizacao" class="nav-link text-sm font-medium text-art-graphite hover:text-art-sienna transition-colors">Contato</a>
+            </nav>
+
+            <!-- CTA Header & Rating Badge -->
+            <div class="hidden sm:flex items-center gap-4">
+                <div class="hidden xl:flex items-center gap-1.5 bg-art-paper px-3 py-1.5 rounded-full border border-art-border text-xs">
+                    <span class="text-amber-500"><i class="fa-solid fa-star"></i> 5.0</span>
+                    <span class="text-art-warmgrey">no Google</span>
+                </div>
+                <button onclick="openBookingModal()" class="bg-art-sienna hover:bg-art-terracotta text-white font-medium text-xs sm:text-sm px-5 py-2.5 rounded-full shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 flex items-center gap-2">
+                    <i class="fa-regular fa-calendar-check"></i>
+                    <span>Agendar Visita</span>
+                </button>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="lg:hidden p-2 text-art-charcoal hover:text-art-sienna focus:outline-none" aria-label="Abrir Menu">
+                <i class="fa-solid fa-bars text-2xl" id="menuIcon"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-art-canvas border-b border-art-border px-6 pt-4 pb-6 space-y-4">
+            <a href="#inicio" onclick="toggleMobileMenu()" class="block text-base font-medium text-art-charcoal hover:text-art-sienna py-2">Início</a>
+            <a href="#atelie" onclick="toggleMobileMenu()" class="block text-base font-medium text-art-charcoal hover:text-art-sienna py-2">O Ateliê</a>
+            <a href="#cursos" onclick="toggleMobileMenu()" class="block text-base font-medium text-art-charcoal hover:text-art-sienna py-2">Cursos & Técnicas</a>
+            <a href="#diferenciais" onclick="toggleMobileMenu()" class="block text-base font-medium text-art-charcoal hover:text-art-sienna py-2">Por Que Escolher</a>
+            <a href="#depoimentos" onclick="toggleMobileMenu()" class="block text-base font-medium text-art-charcoal hover:text-art-sienna py-2">Depoimentos</a>
+            <a href="#localizacao" onclick="toggleMobileMenu()" class="block text-base font-medium text-art-charcoal hover:text-art-sienna py-2">Localização & Contato</a>
+            <div class="pt-2 border-t border-art-border flex flex-col gap-3">
+                <button onclick="toggleMobileMenu(); openBookingModal();" class="w-full bg-art-sienna text-white font-medium py-3 rounded-xl text-center shadow">
+                    Agendar Aula Experimental
+                </button>
+                <a href="https://wa.me/5521979116906?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20as%20aulas%20no%20Ateli%C3%AA." target="_blank" class="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-medium py-3 rounded-xl text-center shadow flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> Falar no WhatsApp
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content wrapper -->
+    <main class="pt-20">
+
+        <!-- 2. Seção Hero (Impacto & Arte) -->
+        <section id="inicio" class="relative overflow-hidden pt-12 lg:pt-20 pb-16 lg:pb-28 bg-canvas-texture">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                    
+                    <!-- Left Hero Text -->
+                    <div class="lg:col-span-7 space-y-6 sm:space-y-8 text-center lg:text-left">
+                        
+                        <!-- Badge -->
+                        <div class="inline-flex items-center gap-2 bg-art-paper border border-art-gold/30 px-4 py-2 rounded-full shadow-sm text-xs sm:text-sm font-medium text-art-charcoal">
+                            <span class="flex text-amber-500 gap-0.5">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </span>
+                            <span class="font-bold">5.0 no Google</span>
+                            <span class="text-art-border">|</span>
+                            <span class="text-art-sienna font-semibold">Ensino de Arte Humanizado & Técnico</span>
+                        </div>
+
+                        <!-- Main Title -->
+                        <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-art-charcoal leading-[1.15] tracking-tight">
+                            Aprenda a Arte do <span class="italic font-normal text-art-sienna">Desenho Realista</span> e da Pintura a Óleo na Tijuca
+                        </h1>
+
+                        <!-- Subtitle -->
+                        <p class="text-lg sm:text-xl text-art-warmgrey font-light max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                            Um refúgio artístico no coração da Zona Norte. Descubra ou aperfeiçoe sua técnica com a orientação dedicada do <strong class="text-art-charcoal font-semibold">Professor Andrey</strong>, em um ambiente acolhedor e estimulante.
+                        </p>
+
+                        <!-- Action Buttons -->
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                            <a href="#cursos" class="w-full sm:w-auto bg-art-sienna hover:bg-art-terracotta text-white font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 text-center flex items-center justify-center gap-3">
+                                <span>Conhecer as Aulas</span>
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </a>
+                            <a href="https://wa.me/5521979116906?text=Ol%C3%A1!%20Gostaria%20de%20tirar%20d%C3%BAvidas%20sobre%20as%20aulas%20de%20desenho%20e%20pintura." target="_blank" class="w-full sm:w-auto bg-art-paper border-2 border-art-sienna/30 hover:border-art-sienna text-art-charcoal hover:text-art-sienna font-semibold px-8 py-4 rounded-xl transition-all text-center flex items-center justify-center gap-3">
+                                <i class="fa-brands fa-whatsapp text-emerald-600 text-xl"></i>
+                                <span>Falar no WhatsApp</span>
+                            </a>
+                        </div>
+
+                        <!-- Highlights List -->
+                        <div class="pt-6 border-t border-art-border/80 grid grid-cols-2 sm:grid-cols-3 gap-4 text-left">
+                            <div class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-art-gold"></i>
+                                <span class="text-xs sm:text-sm font-medium text-art-graphite">Do Zero ao Avançado</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-art-gold"></i>
+                                <span class="text-xs sm:text-sm font-medium text-art-graphite">Acompanhamento Individual</span>
+                            </div>
+                            <div class="col-span-2 sm:col-span-1 flex items-center gap-2">
+                                <i class="fa-solid fa-check text-art-gold"></i>
+                                <span class="text-xs sm:text-sm font-medium text-art-graphite">Perto do Metrô Saens Peña</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Right Hero Media / Artwork Frame showcase -->
+                    <div class="lg:col-span-5 relative">
+                        <div class="relative mx-auto max-w-md lg:max-w-none">
+                            <!-- Golden Frame Wrapper -->
+                            <div class="p-3 sm:p-4 bg-art-card rounded-2xl art-border shadow-2xl relative z-10 transform lg:rotate-1 hover:rotate-0 transition-transform duration-500">
+                                <div class="relative rounded-lg overflow-hidden aspect-[4/5] bg-art-graphite">
+                                    <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=1000&q=80" 
+                                         alt="Pintura a óleo e estudo realista de luz e sombra" 
+                                         class="w-full h-full object-cover opacity-90 hover:scale-105 transition-transform duration-700"
+                                         onerror="this.src='https://placehold.co/800x1000/2B2B28/FDFBF7?text=Panela+da+Pintura'">
+                                    
+                                    <!-- Floating Overlay Card -->
+                                    <div class="absolute bottom-4 left-4 right-4 bg-art-charcoal/90 backdrop-blur-md p-4 rounded-xl border border-art-gold/30 text-white">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-10 h-10 rounded-full bg-art-sienna/30 flex items-center justify-center border border-art-gold/50 text-art-gold">
+                                                <i class="fa-solid fa-brush"></i>
+                                            </div>
+                                            <div>
+                                                <h4 class="font-serif font-bold text-base text-art-canvas">Ateliê Panela da Pintura</h4>
+                                                <p class="text-xs text-art-paper/80">Edifício Selimesther • Sala 704</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Decorative Layer Backgrounds -->
+                            <div class="absolute -inset-2 bg-gradient-to-r from-art-sienna to-art-gold opacity-20 blur-xl rounded-3xl -z-10"></div>
+                            <div class="hidden sm:block absolute -top-6 -right-6 w-24 h-24 bg-art-gold/10 rounded-full blur-2xl"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Seção O Ateliê & Apresentação -->
+        <section id="atelie" class="py-16 sm:py-24 bg-art-paper border-y border-art-border">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                    
+                    <!-- Left Images Grid -->
+                    <div class="grid grid-cols-2 gap-4 relative">
+                        <div class="space-y-4">
+                            <div class="rounded-2xl overflow-hidden shadow-md art-border bg-art-card">
+                                <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=600&q=80" alt="Materiais de pintura e pincéis" class="w-full h-52 sm:h-64 object-cover hover:scale-105 transition-transform duration-500">
+                            </div>
+                            <div class="rounded-2xl overflow-hidden shadow-md art-border bg-art-card p-6 text-center bg-art-sienna text-white">
+                                <span class="font-serif text-3xl sm:text-4xl font-bold block">100%</span>
+                                <span class="text-xs sm:text-sm uppercase tracking-wider font-medium opacity-90">Personalizado</span>
+                                <p class="text-xs mt-2 opacity-80">Você evolui no seu próprio ritmo técnico.</p>
+                            </div>
+                        </div>
+                        <div class="space-y-4 pt-8">
+                            <div class="rounded-2xl overflow-hidden shadow-md art-border bg-art-card">
+                                <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=600&q=80" alt="Desenho realista em grafite" class="w-full h-64 sm:h-80 object-cover hover:scale-105 transition-transform duration-500">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Text Content -->
+                    <div class="space-y-6">
+                        <div class="inline-flex items-center gap-2 text-art-sienna font-semibold text-xs tracking-widest uppercase">
+                            <i class="fa-solid fa-palette"></i>
+                            <span>Espaço & Orientação</span>
+                        </div>
+                        
+                        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-art-charcoal leading-tight">
+                            Um ambiente feito para despertar a sua <span class="italic text-art-sienna">expressão mais autêntica</span>
+                        </h2>
+
+                        <p class="text-art-warmgrey leading-relaxed text-base sm:text-lg">
+                            O <strong>Panela da Pintura</strong> não é apenas uma escola de arte, mas um refúgio acolhedor e inspirador no coração da Tijuca. Aqui, acreditamos que a habilidade do desenho e da pintura realista não é um "dom nato", mas uma linguagem técnica fascinante que pode ser aprendida e aperfeiçoada por qualquer pessoa.
+                        </p>
+
+                        <p class="text-art-warmgrey leading-relaxed text-base">
+                            Sob a condução paciente e dedicada do <strong>Professor Andrey</strong>, você aprenderá desde os fundamentos de estrutura, proporção, valores tonais e luz e sombra, até as misturas complexas de pigmentos da pintura a óleo clássica e contemporânea.
+                        </p>
+
+                        <!-- Key Pillars Grid -->
+                        <div class="grid sm:grid-cols-2 gap-4 pt-4">
+                            <div class="p-4 rounded-xl bg-art-card border border-art-border flex gap-3.5 items-start">
+                                <div class="w-8 h-8 rounded-lg bg-art-sienna/10 text-art-sienna flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-user-graduate"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-serif font-bold text-art-charcoal text-base">Prof. Andrey</h3>
+                                    <p class="text-xs text-art-warmgrey">Acompanhamento lado a lado em cada traço e pincelada.</p>
+                                </div>
+                            </div>
+
+                            <div class="p-4 rounded-xl bg-art-card border border-art-border flex gap-3.5 items-start">
+                                <div class="w-8 h-8 rounded-lg bg-art-gold/10 text-art-gold flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-[#C86D51] fa-chair"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-serif font-bold text-art-charcoal text-base">Espaço Confortável</h3>
+                                    <p class="text-xs text-art-warmgrey">Cavaletes, cavaletes de mesa e iluminação pensada para arte.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Seção Cursos & Modalidades (Grid de Cards Artísticos Interativos) -->
+        <section id="cursos" class="py-16 sm:py-24 bg-canvas-texture">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Section Title Header -->
+                <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16 space-y-4">
+                    <span class="inline-block text-art-sienna font-semibold text-xs uppercase tracking-widest bg-art-sienna/10 px-4 py-1.5 rounded-full">
+                        Modalidades & Formações
+                    </span>
+                    <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-art-charcoal">
+                        Cursos Projetados para o Seu <span class="italic text-art-sienna">Desenvolvimento Técnico</span>
+                    </h2>
+                    <p class="text-art-warmgrey text-base sm:text-lg">
+                        Escolha a modalidade que mais se alinha aos seus objetivos artísticos. Turmas reduzidas para atenção individualizada.
+                    </p>
+
+                    <!-- Filter Tabs -->
+                    <div class="flex flex-wrap justify-center gap-2 pt-4" id="courseFilters">
+                        <button onclick="filterCourses('all')" class="filter-btn active px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all bg-art-sienna text-white shadow-sm" data-filter="all">Todas as Modalidades</button>
+                        <button onclick="filterCourses('desenho')" class="filter-btn px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all bg-art-paper text-art-warmgrey hover:bg-art-border" data-filter="desenho">Desenho Realista</button>
+                        <button onclick="filterCourses('oleo')" class="filter-btn px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all bg-art-paper text-art-warmgrey hover:bg-art-border" data-filter="oleo">Pintura a Óleo</button>
+                        <button onclick="filterCourses('iniciante')" class="filter-btn px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all bg-art-paper text-art-warmgrey hover:bg-art-border" data-filter="iniciante">Iniciação do Zero</button>
+                    </div>
+                </div>
+
+                <!-- Courses Grid -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8" id="coursesGrid">
+                    
+                    <!-- Card 1: Desenho Realista -->
+                    <div class="course-card group bg-art-card rounded-2xl art-border shadow-frame hover:shadow-frame-hover transition-all duration-300 p-6 sm:p-8 flex flex-col justify-between" data-category="desenho">
+                        <div>
+                            <div class="flex items-center justify-between mb-6">
+                                <div class="w-14 h-14 rounded-2xl bg-art-paper border border-art-gold/30 flex items-center justify-center text-art-sienna text-2xl group-hover:scale-110 transition-transform">
+                                    <i class="fa-solid fa-pencil"></i>
+                                </div>
+                                <span class="text-xs font-semibold px-3 py-1 rounded-full bg-art-sienna/10 text-art-sienna border border-art-sienna/20">Grafite & Carvão</span>
+                            </div>
+
+                            <h3 class="font-serif font-bold text-2xl sm:text-3xl text-art-charcoal mb-3 group-hover:text-art-sienna transition-colors">
+                                Desenho Realista
+                            </h3>
+
+                            <p class="text-art-warmgrey text-sm sm:text-base leading-relaxed mb-6">
+                                Domine as técnicas fundamentais para transformar superfícies bidimensionais em figuras tridimensionais vivas. Estudo aprofundado de volume, textura e tridimensionalidade.
+                            </p>
+
+                            <ul class="space-y-2.5 mb-8 text-sm text-art-graphite">
+                                <li class="flex items-center gap-2.5">
+                                    <i class="fa-solid fa-circle-check text-art-gold text-xs"></i>
+                                    <span>Domínio absoluto de Luz, Sombra e Meios-tons</span>
+                                </li>
+                                <li class="flex items-center gap-2.5">
+                                    <i class="fa-solid fa-circle-check text-art-gold text-xs"></i>
+                                    <span>Uso profissional de graduações (HB, 2B, 6B, Carvão)</span>
+                                </li>
+                                <li class="flex items-center gap-2.5">
+                                    <i class="fa-solid fa-circle-check text-art-gold text-xs"></i>
+                                    <span>Anatomia, Retrato e Natureza Morta</span>
+                                </li>
+                                <li class="flex items-center gap-2.5">
+                                    <i class="fa-solid fa-circle-check text-art-gold text-xs"></i>
+                                    <span>Técnicas de esfumado e textura de pele/superfícies</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="pt-6 border-t border-art-border flex items-center justify-between">
+                            <span class="text-xs text-art-warmgrey font-medium"><i class="fa-regular fa-clock"></i> Presencial • Aulas Semanais</span>
+                            <button onclick="openBookingModal('Desenho Realista')" class="text-art-sienna font-semibold text-sm hover:text-art-terracotta flex items-center gap-2 group-hover:translate-x-1 transition-transform">
+                                <span>Tenho Interesse</span>
+                                <i class="fa-solid fa-chevron-right text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Pintura a Óleo -->
+                    <div class="course-card group bg-art-card rounded-2xl art-border shadow-frame hover:shadow-frame-hover transition-all duration-300 p-6 sm:p-8 flex flex-col justify-between" data-category="oleo">
+                        <div>
+                            <div class="flex items-center justify-between mb-6">
+                                <div class="w-14 h-14 rounded-2xl bg-art-paper border border-art-gold/30 flex items-center justify-center text-art-gold text-2xl group-hover:scale-110 transition-transform">
+                                    <i class="fa-solid fa-palette"></i>
+                                </div>
+                                <span class="text-xs font-semibold px-3 py-1 rounded-full bg-art-gold/10 text-art-gold border border-art-gold/20">Clássica & Contemporânea</span>
+                            </div>
+
+                            <h3 class="font-serif font-bold text-2xl sm:text-3xl text-art-charcoal mb-3 group-hover:text-art-sienna transition-colors">
+                                Pintura a Óleo
+                            </h3>
+
+                            <p class="text-art-warmgrey text-sm sm:text-base leading-relaxed mb-6">
+                                A nobreza da tinta a óleo desmistificada. Aprenda o manuseio dos pigmentos, diluentes, médiuns, veladuras e a alquimia fascinante da mistura de cores.
+                            </p>
+
+                            <ul class="space-y-2.5 mb-8 text-sm text-art-graphite">
+                                <li class="flex items-center gap-2.5">
+                                    <i class="fa-solid fa-circle-check text-art-gold text-xs"></i>
+                                    <span>Teoria das Cores prática e harmonização de paleta</span>
+                                </li>
+                                <li class="flex items-center gap-2.5">
+                                    <i class="fa-solid fa-circle-check text-art-gold text-xs"></i>
+                                    <span>Técnica por camadas (Grisaille, Impasto e Veladuras)</span>
+                                </li>
+                                <li class="flex items-center gap-2.5">
+                                    <i class="fa-solid fa-circle-check text-art-gold text-xs"></i>
+                                    <span>Preparação de tela e manipulação de óleos/solventes</span>
+                                </li>
+                                <li class="flex items-center gap-2.5">
+                                    <i class="fa-solid fa-circle-check text-art-gold text-xs"></i>
+                                    <span>Rendição de luz quente/fria e profundidade de cor</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="pt-6 border-t border-art-border flex items-center justify-between">
+                            <span class="text-xs text-art-warmgrey font-medium"><i class="fa-regular fa-clock"></i> Presencial • Aulas Semanais</span>
+                            <button onclick="openBookingModal('Pintura a Óleo')" class="text-art-sienna font-semibold text-sm hover:text-art-terracotta flex items-center gap-2 group-hover:translate-x-1 transition-transform">
+                                <span>Tenho Interesse</span>
+                                <i class="fa-solid fa-chevron-right text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Iniciação Artística -->
+                    <div class="course-card group bg-art-card rounded-2xl art-border shadow-frame hover:shadow-frame-hover transition-all duration-300 p-6 sm:p-8 flex flex-col justify-between" data-category="iniciante">
+                        <div>
+                            <div class="flex items-center justify-between mb-6">
+                                <div class="w-14 h-14 rounded-2xl bg-art-paper border border-art-gold/30 flex items-center justify-center text-art-terracotta text-2xl group-hover:scale-110 transition-transform">
+                                    <i class="fa-solid fa-seedling"></i>
+                                </div>
+                                <span class="text-xs font-semibold px-3 py-1 rounded-full bg-art-terracotta/10 text-art-terracotta border border-art-terracotta/20">Para Principiantes</span>
+                            </div>
+
+                            <h3 class="font-serif font-bold text-2xl sm:text-3xl text-art-charcoal mb-3 group-hover:text-art-sienna transition-colors">
+                                Iniciação Artística
+                            </h3>
+
+                            <p class="text-art-warmgrey text-sm sm:text-base leading-relaxed mb-6">
+                                Para quem nunca pegou num lápis ou pincel antes. Um método acolhedor e sem cobranças para destravar seu potencial artístico adormecido.
+                            </p>
+
+                            <ul class="space-y-2.5 mb-8 text-sm text-art-graphite">
+                                <li class="flex items-center gap-2.5">
+                                    <i class="fa-solid fa-circle-check text-art-gold text-xs"></i>
+                                    <span>Aperfeiçoamento do olhar e observação espacial</span>
+                                </li>
+                                <li class="flex items-center gap-2.5">
+                                    <i class="fa-solid fa-circle-check text-art-gold text-xs"></i>
+                                    <span>Perda do receio da página em branco</span>
+                                </li>
+                                <li class="flex items-center gap-2.5">
+                                    <i class="fa-solid fa-circle-check text-art-gold text-xs"></i>
+                                    <span>Exercícios práticos passo a passo super didáticos</span>
+                                </li>
+                                <li class="flex items-center gap-2.5">
+                                    <i class="fa-solid fa-circle-check text-art-gold text-xs"></i>
+                                    <span>Ambiente leve, terapêutico e estimulante</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="pt-6 border-t border-art-border flex items-center justify-between">
+                            <span class="text-xs text-art-warmgrey font-medium"><i class="fa-regular fa-clock"></i> Presencial • Aulas Semanais</span>
+                            <button onclick="openBookingModal('Iniciação Artística')" class="text-art-sienna font-semibold text-sm hover:text-art-terracotta flex items-center gap-2 group-hover:translate-x-1 transition-transform">
+                                <span>Tenho Interesse</span>
+                                <i class="fa-solid fa-chevron-right text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Aprimoramento de Técnica -->
+                    <div class="course-card group bg-art-card rounded-2xl art-border shadow-frame hover:shadow-frame-hover transition-all duration-300 p-6 sm:p-8 flex flex-col justify-between" data-category="desenho oleo">
+                        <div>
+                            <div class="flex items-center justify-between mb-6">
+                                <div class="w-14 h-14 rounded-2xl bg-art-paper border border-art-gold/30 flex items-center justify-center text-art-charcoal text-2xl group-hover:scale-110 transition-transform">
+                                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                                </div>
+                                <span class="text-xs font-semibold px-3 py-1 rounded-full bg-art-charcoal/10 text-art-charcoal border border-art-charcoal/20">Avançado & Mentoria</span>
+                            </div>
+
+                            <h3 class="font-serif font-bold text-2xl sm:text-3xl text-art-charcoal mb-3 group-hover:text-art-sienna transition-colors">
+                                Mentoria & Aprimoramento
+                            </h3>
+
+                            <p class="text-art-warmgrey text-sm sm:text-base leading-relaxed mb-6">
+                                Destinado a praticantes intermediários e avançados que desejam refinamento cirúrgico de estilo, acabamento hiper-realista ou construção de portfólio.
+                            </p>
+
+                            <ul class="space-y-2.5 mb-8 text-sm text-art-graphite">
+                                <li class="flex items-center gap-2.5">
+                                    <i class="fa-solid fa-circle-check text-art-gold text-xs"></i>
+                                    <span>Correções avançadas de composição e atmosfera</span>
+                                </li>
+                                <li class="flex items-center gap-2.5">
+                                    <i class="fa-solid fa-circle-check text-art-gold text-xs"></i>
+                                    <span>Resolução de desafios técnicos específicos do aluno</span>
+                                </li>
+                                <li class="flex items-center gap-2.5">
+                                    <i class="fa-solid fa-circle-check text-art-gold text-xs"></i>
+                                    <span>Estudo de grandes mestres da pintura realista</span>
+                                </li>
+                                <li class="flex items-center gap-2.5">
+                                    <i class="fa-solid fa-circle-check text-art-gold text-xs"></i>
+                                    <span>Desenvolvimento de projetos de artes autorais</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="pt-6 border-t border-art-border flex items-center justify-between">
+                            <span class="text-xs text-art-warmgrey font-medium"><i class="fa-regular fa-clock"></i> Horários Flexíveis</span>
+                            <button onclick="openBookingModal('Mentoria & Aprimoramento')" class="text-art-sienna font-semibold text-sm hover:text-art-terracotta flex items-center gap-2 group-hover:translate-x-1 transition-transform">
+                                <span>Tenho Interesse</span>
+                                <i class="fa-solid fa-chevron-right text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 5. Seção Por Que Escolher o Panela da Pintura -->
+        <section id="diferenciais" class="py-16 sm:py-24 bg-art-paper border-y border-art-border">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="grid lg:grid-cols-12 gap-12 items-center">
+                    
+                    <div class="lg:col-span-5 space-y-6">
+                        <span class="text-art-sienna font-semibold text-xs uppercase tracking-widest">
+                            Diferenciais Únicos
+                        </span>
+                        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-art-charcoal leading-tight">
+                            Por que alunos escolhem o <span class="italic text-art-sienna">Panela da Pintura</span>?
+                        </h2>
+                        <p class="text-art-warmgrey text-base leading-relaxed">
+                            Mais do que aprender técnica, nossos alunos encontram um momento de desaceleração da rotina, convivência inspiradora e conquistas visíveis aula a aula.
+                        </p>
+                        
+                        <div class="pt-4">
+                            <button onclick="openBookingModal()" class="bg-art-sienna hover:bg-art-terracotta text-white font-medium px-6 py-3.5 rounded-xl shadow transition-all inline-flex items-center gap-2">
+                                <span>Agendar uma Visita ao Ateliê</span>
+                                <i class="fa-solid fa-calendar-days text-sm"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-7 grid sm:grid-cols-2 gap-6">
+                        
+                        <!-- Pillar 1 -->
+                        <div class="p-6 bg-art-card rounded-2xl art-border shadow-sm space-y-3 hover:-translate-y-1 transition-transform duration-300">
+                            <div class="w-12 h-12 rounded-xl bg-art-sienna/10 text-art-sienna flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </div>
+                            <h3 class="font-serif font-bold text-xl text-art-charcoal">Orientação Dedicada</h3>
+                            <p class="text-xs sm:text-sm text-art-warmgrey leading-relaxed">
+                                O Professor Andrey acompanha cada aluno individualmente na bancada, adaptando o ritmo e os exercícios ao seu nível técnico atual.
+                            </p>
+                        </div>
+
+                        <!-- Pillar 2 -->
+                        <div class="p-6 bg-art-card rounded-2xl art-border shadow-sm space-y-3 hover:-translate-y-1 transition-transform duration-300">
+                            <div class="w-12 h-12 rounded-xl bg-art-gold/10 text-art-gold flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <h3 class="font-serif font-bold text-xl text-art-charcoal">Excelente Localização</h3>
+                            <p class="text-xs sm:text-sm text-art-warmgrey leading-relaxed">
+                                No Edifício Selimesther (Rua Conde de Bonfim), a poucos passos da Praça Saens Peña e da estação de metrô, com total facilidade de acesso.
+                            </p>
+                        </div>
+
+                        <!-- Pillar 3 -->
+                        <div class="p-6 bg-art-card rounded-2xl art-border shadow-sm space-y-3 hover:-translate-y-1 transition-transform duration-300">
+                            <div class="w-12 h-12 rounded-xl bg-art-terracotta/10 text-art-terracotta flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-users"></i>
+                            </div>
+                            <h3 class="font-serif font-bold text-xl text-art-charcoal">Comunidade Vibrante</h3>
+                            <p class="text-xs sm:text-sm text-art-warmgrey leading-relaxed">
+                                Troca genuína de experiências entre pessoas que compartilham a mesma paixão por arte em um ambiente amigável e sem julgamentos.
+                            </p>
+                        </div>
+
+                        <!-- Pillar 4 -->
+                        <div class="p-6 bg-art-card rounded-2xl art-border shadow-sm space-y-3 hover:-translate-y-1 transition-transform duration-300">
+                            <div class="w-12 h-12 rounded-xl bg-emerald-700/10 text-emerald-700 flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-heart-pulse"></i>
+                            </div>
+                            <h3 class="font-serif font-bold text-xl text-art-charcoal">Bem-Estar & Foco</h3>
+                            <p class="text-xs sm:text-sm text-art-warmgrey leading-relaxed">
+                                As horas no ateliê funcionam como um verdadeiro refúgio terapêutico, onde você exercita o foco, a paciência e a criatividade.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 6. Seção de Avaliações / Depoimentos de Alunos -->
+        <section id="depoimentos" class="py-16 sm:py-24 bg-canvas-texture overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
+                    <span class="text-art-gold font-semibold text-xs uppercase tracking-widest">
+                        Reconhecimento & Afeto
+                    </span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-art-charcoal">
+                        O que dizem os <span class="italic text-art-sienna">nossos alunos</span>
+                    </h2>
+                    <div class="flex items-center justify-center gap-2 pt-2">
+                        <span class="text-amber-500 text-lg">★★★★★</span>
+                        <span class="font-bold text-art-charcoal text-sm">Nota 5.0 de 5.0</span>
+                        <span class="text-art-warmgrey text-xs">(Avaliações verificadas no Google)</span>
+                    </div>
+                </div>
+
+                <!-- Testimonials Grid -->
+                <div class="grid md:grid-cols-3 gap-6">
+                    
+                    <!-- Testimonial 1 -->
+                    <div class="bg-art-card p-6 sm:p-8 rounded-2xl art-border shadow-sm flex flex-col justify-between space-y-4 relative">
+                        <div class="text-amber-500 text-sm">★★★★★</div>
+                        <p class="text-art-graphite text-sm sm:text-base italic leading-relaxed">
+                            "Lugar incrível! Achei que nunca conseguiria fazer uma pintura a óleo realista por ser totalmente iniciante. O Professor Andrey tem uma paciência gigantesca e explica cada detalhe com uma didática perfeita. Minha evolução foi nítida nas primeiras aulas!"
+                        </p>
+                        <div class="pt-4 border-t border-art-border flex items-center justify-between">
+                            <div>
+                                <h4 class="font-serif font-bold text-art-charcoal text-base">Mariana Silva</h4>
+                                <span class="text-xs text-art-warmgrey">Aluna de Pintura a Óleo</span>
+                            </div>
+                            <i class="fa-brands fa-google text-art-warmgrey/40 text-lg"></i>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="bg-art-card p-6 sm:p-8 rounded-2xl art-border shadow-sm flex flex-col justify-between space-y-4 relative">
+                        <div class="text-amber-500 text-sm">★★★★★</div>
+                        <p class="text-art-graphite text-sm sm:text-base italic leading-relaxed">
+                            "O Panela da Pintura é o meu momento de paz na semana. O ateliê na Conde de Bonfim é superfácil de chegar, super aconchegante e com uma energia maravilhosa. O trabalho de luz e sombra no grafite que aprendi aqui superou todas as minhas expectativas."
+                        </p>
+                        <div class="pt-4 border-t border-art-border flex items-center justify-between">
+                            <div>
+                                <h4 class="font-serif font-bold text-art-charcoal text-base">Carlos Eduardo</h4>
+                                <span class="text-xs text-art-warmgrey">Aluno de Desenho Realista</span>
+                            </div>
+                            <i class="fa-brands fa-google text-art-warmgrey/40 text-lg"></i>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="bg-art-card p-6 sm:p-8 rounded-2xl art-border shadow-sm flex flex-col justify-between space-y-4 relative">
+                        <div class="text-amber-500 text-sm">★★★★★</div>
+                        <p class="text-art-graphite text-sm sm:text-base italic leading-relaxed">
+                            "Procurava uma escola de arte na Tijuca e encontrei muito mais do que isso. Uma verdadeira família da arte! O Prof. Andrey desperta em você a paixão pela pintura realista. Recomendo de olhos fechados para quem quer começar do zero!"
+                        </p>
+                        <div class="pt-4 border-t border-art-border flex items-center justify-between">
+                            <div>
+                                <h4 class="font-serif font-bold text-art-charcoal text-base">Beatriz Mendes</h4>
+                                <span class="text-xs text-art-warmgrey">Aluna de Iniciação Artística</span>
+                            </div>
+                            <i class="fa-brands fa-google text-art-warmgrey/40 text-lg"></i>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 7. Seção Localização & Contato Integrada -->
+        <section id="localizacao" class="py-16 sm:py-24 bg-art-paper border-t border-art-border">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="grid lg:grid-cols-12 gap-12">
+                    
+                    <!-- Left Contact & Location Details -->
+                    <div class="lg:col-span-5 space-y-8">
+                        <div>
+                            <span class="text-art-sienna font-semibold text-xs uppercase tracking-widest">
+                                Onde Estamos
+                            </span>
+                            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-art-charcoal mt-2">
+                                Venha Tomar um Café e Conhecer o Ateliê
+                            </h2>
+                            <p class="text-art-warmgrey text-sm sm:text-base mt-3 leading-relaxed">
+                                Estamos localizados no centro da Tijuca, em um ponto seguro, tradicional e de altíssima conveniência.
+                            </p>
+                        </div>
+
+                        <!-- Address Info Box -->
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-4 p-4 rounded-xl bg-art-card border border-art-border">
+                                <div class="w-10 h-10 rounded-lg bg-art-sienna/10 text-art-sienna flex items-center justify-center shrink-0 text-lg">
+                                    <i class="fa-solid fa-building-user"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-serif font-bold text-art-charcoal text-base">Endereço Institucional</h4>
+                                    <p class="text-sm text-art-graphite mt-1">
+                                        Rua Conde de Bonfim, 377 — Sala 704<br>
+                                        <span class="text-art-warmgrey">Edifício Selimesther</span><br>
+                                        Tijuca, Rio de Janeiro - RJ
+                                    </p>
+                                    <p class="text-xs text-art-gold font-semibold mt-1">
+                                        <i class="fa-solid fa-subway text-xs"></i> A poucos minutos da Estação de Metrô Saens Peña
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4 p-4 rounded-xl bg-art-card border border-art-border">
+                                <div class="w-10 h-10 rounded-lg bg-emerald-700/10 text-emerald-700 flex items-center justify-center shrink-0 text-lg">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-serif font-bold text-art-charcoal text-base">Atendimento Direto</h4>
+                                    <p class="text-sm text-art-graphite mt-1">
+                                        WhatsApp / Tel: <strong class="text-art-charcoal">(21) 97911-6906</strong>
+                                    </p>
+                                    <a href="https://wa.me/5521979116906?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20visita%20ao%20ateli%C3%AA." target="_blank" class="inline-block text-xs font-semibold text-emerald-700 hover:underline mt-1">
+                                        Clique para iniciar conversa imediata &rarr;
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Quick Map Buttons -->
+                        <div class="flex flex-wrap gap-3">
+                            <a href="https://maps.google.com/?q=Rua+Conde+de+Bonfim+377+Tijuca+Rio+de+Janeiro" target="_blank" class="bg-art-card hover:bg-art-border text-art-charcoal text-xs font-semibold px-4 py-2.5 rounded-lg border border-art-border flex items-center gap-2 transition-colors">
+                                <i class="fa-solid fa-map-location-dot text-art-sienna"></i> Abrir no Google Maps
+                            </a>
+                            <a href="https://waze.com/ul?q=Rua%20Conde%20de%20Bonfim%20377%20Tijuca" target="_blank" class="bg-art-card hover:bg-art-border text-art-charcoal text-xs font-semibold px-4 py-2.5 rounded-lg border border-art-border flex items-center gap-2 transition-colors">
+                                <i class="fa-brands fa-waze text-sky-600"></i> Traçar Rota no Waze
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right Quick Appointment Form -->
+                    <div class="lg:col-span-7">
+                        <div class="bg-art-card p-6 sm:p-10 rounded-2xl art-border shadow-frame">
+                            <h3 class="font-serif font-bold text-2xl text-art-charcoal mb-2">
+                                Agendar Aula Experimental ou Visita
+                            </h3>
+                            <p class="text-xs sm:text-sm text-art-warmgrey mb-6">
+                                Preencha o formulário abaixo para enviarmos os horários disponíveis e informações completas no seu WhatsApp.
+                            </p>
+
+                            <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                                <div class="grid sm:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-xs font-semibold text-art-graphite mb-1.5" for="name">Seu Nome *</label>
+                                        <input type="text" id="name" required placeholder="Ex: Ana Maria" class="w-full px-4 py-3 rounded-xl border border-art-border bg-art-canvas text-sm focus:outline-none focus:border-art-sienna transition-colors">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-semibold text-art-graphite mb-1.5" for="phone">Seu WhatsApp *</label>
+                                        <input type="tel" id="phone" required placeholder="(21) 99999-9999" class="w-full px-4 py-3 rounded-xl border border-art-border bg-art-canvas text-sm focus:outline-none focus:border-art-sienna transition-colors">
+                                    </div>
+                                </div>
+
+                                <div class="grid sm:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-xs font-semibold text-art-graphite mb-1.5" for="courseInterest">Interesse Principal</label>
+                                        <select id="courseInterest" class="w-full px-4 py-3 rounded-xl border border-art-border bg-art-canvas text-sm focus:outline-none focus:border-art-sienna transition-colors">
+                                            <option value="Desenho Realista">Desenho Realista (Grafite/Carvão)</option>
+                                            <option value="Pintura a Óleo">Pintura a Óleo Clássica/Contemporânea</option>
+                                            <option value="Iniciação Artística">Iniciação Artística (Do Zero)</option>
+                                            <option value="Mentoria Avançada">Mentoria & Aprimoramento</option>
+                                            <option value="Visita Geral">Apenas Conhecer o Ateliê</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-semibold text-art-graphite mb-1.5" for="experienceLevel">Nível de Experiência</label>
+                                        <select id="experienceLevel" class="w-full px-4 py-3 rounded-xl border border-art-border bg-art-canvas text-sm focus:outline-none focus:border-art-sienna transition-colors">
+                                            <option value="Total Iniciante">Nunca desenhei ou pintei antes</option>
+                                            <option value="Básico">Já tenho alguma noções básicas</option>
+                                            <option value="Intermediário">Pratico por conta própria</option>
+                                            <option value="Avançado">Busco refinar técnica profissional</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs font-semibold text-art-graphite mb-1.5" for="message">Mensagem ou Preferência de Horário (Opcional)</label>
+                                    <textarea id="message" rows="3" placeholder="Ex: Tenho preferência por horários no período da tarde..." class="w-full px-4 py-3 rounded-xl border border-art-border bg-art-canvas text-sm focus:outline-none focus:border-art-sienna transition-colors"></textarea>
+                                </div>
+
+                                <button type="submit" class="w-full bg-art-sienna hover:bg-art-terracotta text-white font-semibold py-4 rounded-xl shadow-md transition-all flex items-center justify-center gap-2">
+                                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                                    <span>Enviar Solicitação pelo WhatsApp</span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 8. Rodapé (Footer Institucional) -->
+    <footer class="bg-art-charcoal text-art-paper py-12 border-t border-art-graphite">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 pb-12 border-b border-art-graphite">
+                
+                <!-- Col 1: Brand -->
+                <div class="md:col-span-2 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-art-sienna/20 border border-art-gold/40 flex items-center justify-center text-art-gold">
+                            🎨
+                        </div>
+                        <div>
+                            <h3 class="font-serif font-bold text-xl text-art-canvas">Panela da Pintura</h3>
+                            <p class="text-xs text-art-gold uppercase tracking-widest">Ateliê de Arte Realista</p>
+                        </div>
+                    </div>
+                    <p class="text-xs sm:text-sm text-art-paper/70 max-w-sm leading-relaxed">
+                        Ensino técnico e acolhedor de Desenho Realista e Pintura a Óleo na Tijuca. Transformando a paixão pela arte em maestria técnica sob a orientação do Prof. Andrey.
+                    </p>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div class="space-y-3">
+                    <h4 class="font-serif font-bold text-art-canvas text-base">Navegação</h4>
+                    <ul class="space-y-2 text-xs sm:text-sm text-art-paper/70">
+                        <li><a href="#inicio" class="hover:text-art-gold transition-colors">Início</a></li>
+                        <li><a href="#atelie" class="hover:text-art-gold transition-colors">O Ateliê</a></li>
+                        <li><a href="#cursos" class="hover:text-art-gold transition-colors">Cursos & Modalidades</a></li>
+                        <li><a href="#depoimentos" class="hover:text-art-gold transition-colors">Depoimentos dos Alunos</a></li>
+                        <li><a href="#localizacao" class="hover:text-art-gold transition-colors">Localização & Contato</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Address & Social -->
+                <div class="space-y-3">
+                    <h4 class="font-serif font-bold text-art-canvas text-base">Redes & Atendimento</h4>
+                    <p class="text-xs text-art-paper/70">
+                        Rua Conde de Bonfim, 377 - Sala 704<br>
+                        Edifício Selimesther — Tijuca, RJ
+                    </p>
+                    <p class="text-xs text-art-paper/70">
+                        WhatsApp: (21) 97911-6906
+                    </p>
+                    <div class="pt-2 flex gap-3">
+                        <a href="https://wa.me/5521979116906" target="_blank" class="w-8 h-8 rounded-full bg-art-graphite hover:bg-emerald-700 text-white flex items-center justify-center transition-colors" aria-label="WhatsApp">
+                            <i class="fa-brands fa-whatsapp text-sm"></i>
+                        </a>
+                        <a href="#" target="_blank" class="w-8 h-8 rounded-full bg-art-graphite hover:bg-art-sienna text-white flex items-center justify-center transition-colors" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bottom Credits -->
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-art-paper/50 gap-4">
+                <p>&copy; 2026 Panela da Pintura — Ateliê de Arte Realista. Todos os direitos reservados.</p>
+                <p>Tijuca • Rio de Janeiro — RJ</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão Flutuante Permanente do WhatsApp -->
+    <a href="https://wa.me/5521979116906?text=Ol%C3%A1%21%20Vim%20pelo%20site%20do%20Panela%20da%20Pintura%20e%20gostaria%20de%20informa%C3%A7%C3%B5es." 
+       target="_blank" 
+       class="fixed bottom-6 right-6 z-50 bg-emerald-600 hover:bg-emerald-500 text-white p-4 rounded-full shadow-2xl transition-all transform hover:scale-110 flex items-center justify-center group"
+       aria-label="Falar pelo WhatsApp">
+        <span class="absolute -top-1 -right-1 w-3.5 h-3.5 bg-amber-400 rounded-full animate-ping"></span>
+        <span class="absolute -top-1 -right-1 w-3.5 h-3.5 bg-amber-400 rounded-full"></span>
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+        
+        <!-- Tooltip -->
+        <span class="absolute right-full mr-3 bg-art-charcoal text-white text-xs font-medium px-3 py-1.5 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity shadow-lg pointer-events-none hidden sm:inline-block">
+            Falar com Professor Andrey
+        </span>
+    </a>
+
+    <!-- Modal Interativo de Agendamento -->
+    <div id="bookingModal" class="fixed inset-0 z-50 hidden bg-art-charcoal/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-art-card max-w-md w-full rounded-2xl art-border shadow-2xl p-6 sm:p-8 relative animate-in fade-in zoom-in duration-200">
+            
+            <button onclick="closeBookingModal()" class="absolute top-4 right-4 text-art-warmgrey hover:text-art-charcoal p-2">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+
+            <div class="text-center mb-6">
+                <div class="w-12 h-12 bg-art-sienna/10 text-art-sienna rounded-full flex items-center justify-center mx-auto mb-3 text-xl">
+                    <i class="fa-regular fa-calendar-check"></i>
+                </div>
+                <h3 class="font-serif font-bold text-2xl text-art-charcoal">Agendar Visita / Aula</h3>
+                <p class="text-xs text-art-warmgrey mt-1">Panela da Pintura • Ed. Selimesther (Sala 704)</p>
+            </div>
+
+            <form onsubmit="handleModalSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-art-graphite mb-1" for="modalName">Seu Nome *</label>
+                    <input type="text" id="modalName" required placeholder="Como podemos te chamar?" class="w-full px-4 py-2.5 rounded-xl border border-art-border bg-art-canvas text-sm focus:outline-none focus:border-art-sienna">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-art-graphite mb-1" for="modalCourse">Modalidade Escolhida</label>
+                    <select id="modalCourse" class="w-full px-4 py-2.5 rounded-xl border border-art-border bg-art-canvas text-sm focus:outline-none focus:border-art-sienna">
+                        <option value="Desenho Realista">Desenho Realista (Grafite & Carvão)</option>
+                        <option value="Pintura a Óleo">Pintura a Óleo</option>
+                        <option value="Iniciação Artística">Iniciação Artística (Do Zero)</option>
+                        <option value="Mentoria & Aprimoramento">Mentoria & Aprimoramento</option>
+                        <option value="Conhecer o Espaço">Visita Geral ao Ateliê</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-art-graphite mb-1" for="modalPeriod">Melhor Período para Aula/Visita</label>
+                    <select id="modalPeriod" class="w-full px-4 py-2.5 rounded-xl border border-art-border bg-art-canvas text-sm focus:outline-none focus:border-art-sienna">
+                        <option value="Manhã">Manhã</option>
+                        <option value="Tarde">Tarde</option>
+                        <option value="Sábado">Sábado</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="w-full bg-art-sienna hover:bg-art-terracotta text-white font-semibold py-3.5 rounded-xl shadow transition-colors flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Confirmar no WhatsApp</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript Moderno Interativo -->
+    <script>
+        // Toggle Mobile Navigation Drawer
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const icon = document.getElementById('menuIcon');
+            menu.classList.toggle('hidden');
+            
+            if (menu.classList.contains('hidden')) {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            }
+        }
+
+        // Filter Courses Functionality
+        function filterCourses(category) {
+            const cards = document.querySelectorAll('.course-card');
+            const filterBtns = document.querySelectorAll('.filter-btn');
+
+            // Update Active Tab Style
+            filterBtns.forEach(btn => {
+                if (btn.getAttribute('data-filter') === category) {
+                    btn.classList.add('bg-art-sienna', 'text-white', 'shadow-sm');
+                    btn.classList.remove('bg-art-paper', 'text-art-warmgrey');
+                } else {
+                    btn.classList.remove('bg-art-sienna', 'text-white', 'shadow-sm');
+                    btn.classList.add('bg-art-paper', 'text-art-warmgrey');
+                }
+            });
+
+            // Filter Animation Logic
+            cards.forEach(card => {
+                const cardCat = card.getAttribute('data-category');
+                if (category === 'all' || cardCat.includes(category)) {
+                    card.style.display = 'flex';
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'scale(1)';
+                    }, 50);
+                } else {
+                    card.style.opacity = '0';
+                    card.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        card.style.display = 'none';
+                    }, 200);
+                }
+            });
+        }
+
+        // Modal Controls
+        function openBookingModal(defaultCourse = '') {
+            const modal = document.getElementById('bookingModal');
+            const modalCourse = document.getElementById('modalCourse');
+            
+            if (defaultCourse && modalCourse) {
+                modalCourse.value = defaultCourse;
+            }
+            
+            modal.classList.remove('hidden');
+        }
+
+        function closeBookingModal() {
+            document.getElementById('bookingModal').classList.add('hidden');
+        }
+
+        // Form Submission to WhatsApp Intent (Contact Section Form)
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const course = document.getElementById('courseInterest').value;
+            const level = document.getElementById('experienceLevel').value;
+            const message = document.getElementById('message').value;
+
+            const text = `Ol%C3%A1!%20Meu%20nome%20%C3%A9%20*${encodeURIComponent(name)}*.%0A%0A` +
+                         `Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre:%20*${encodeURIComponent(course)}*%0A` +
+                         `N%C3%ADvel:%20${encodeURIComponent(level)}%0A` +
+                         `Contato:%20${encodeURIComponent(phone)}%0A` +
+                         (message ? `Observa%C3%A7%C3%A3o:%20${encodeURIComponent(message)}` : '');
+
+            window.open(`https://wa.me/5521979116906?text=${text}`, '_blank');
+        }
+
+        // Modal Submission to WhatsApp
+        function handleModalSubmit(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('modalName').value;
+            const course = document.getElementById('modalCourse').value;
+            const period = document.getElementById('modalPeriod').value;
+
+            const text = `Ol%C3%A1!%20Meu%20nome%20%C3%A9%20*${encodeURIComponent(name)}*.%0A` +
+                         `Gostaria%20de%20agendar%20uma%20visita/aula%20experimental!%0A` +
+                         `Curso:%20*${encodeURIComponent(course)}*%0A` +
+                         `Prefer%C3%AAncia%20de%20hor%C3%A1rio:%20${encodeURIComponent(period)}`;
+
+            window.open(`https://wa.me/5521979116906?text=${text}`, '_blank');
+            closeBookingModal();
+        }
+
+        // Close modal when clicking backdrop
+        window.onclick = function(event) {
+            const modal = document.getElementById('bookingModal');
+            if (event.target === modal) {
+                closeBookingModal();
+            }
+        }
+    </script>
+</body>
+</html>
